@@ -54,7 +54,7 @@ spec:
                   - ReadWriteOnce
           - name: git-credentials
             secret:
-              secretName: git-credentials
+              secretName: mycredentials-github
 ---
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
@@ -67,7 +67,7 @@ spec:
     - name: sha
       value: $(body.head_commit.id)
     - name: image-repo
-      value: quay.io/tillus/$(body.repository.name)
+      value: quay.io/ting_wu/$(body.repository.name)
     - name: app-name
       value: $(body.repository.name)
 ---
