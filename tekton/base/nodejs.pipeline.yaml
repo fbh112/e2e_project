@@ -36,8 +36,6 @@ spec:
       params:
         - name: IMAGE
           value: $(params.image-repo):$(tasks.clone-repository.results.commit)
-        - name: CONTEXT
-          value: "frontend"
     - name: create-configuration
       params:
         - name: app-name
